@@ -1,0 +1,18 @@
+git assignments
+Question 1:
+  1. Create branch name <pr/<jira-id>/description> format
+  2. push changes to the branch.
+  3. get the approval from @suhalvemu
+  4. try to merge'
+
+Question2:
+1. try to merge from command line and see the results
+
+
+Question3:
+1. understand how rebase works instead of merge.
+
+Question4:
+1. What are events the github generates so that build process triggers.
+
+
