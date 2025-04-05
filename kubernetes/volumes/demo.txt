@@ -1,0 +1,22 @@
+kubectl exec -it emptydir-demo -- sh
+# Inside the container:
+echo "Hello from emptyDir" > /tmp/test.txt
+exit
+
+step3 restart the pod
+kubectl delete pod emptydir-demo
+kubectl apply -f emptyDir-demo.yaml
+
+step4: verify data loss
+kubectl exec -it emptydir-demo -- cat /tmp/test.txt
+
+step5: 
+kubectl exec -it pvc-pod-demo -- sh
+# Inside the container:
+echo "Hello from PV/PVC" > /data/persistent.txt
+exit
+
+kubectl delete pod pvc-pod-demo
+kubectl apply -f pvc-pod-demo.yaml
+
+kubectl exec -it pvc-pod-demo -- cat /data/persistent.txt
